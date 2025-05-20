@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  streamer:
+    build: .
+    environment:
+      - FABRIC_EVENTHUB_CONNECTION_STRING=Endpoint=sb://...
+      - FABRIC_EVENTHUB_NAME=your-eventhub-name
+      - ZIP_FILES=/app/data1/trip_*.zip,/app/data2/trip_*.zip
+      - BATCH_SIZE=1000
+      - SEND_INTERVAL=0.1
+      - MAX_RETRIES=3
+      - RETRY_DELAY=1.0
+      - MAX_CONCURRENT_FILES=10
+    volumes:
+      - ./data1:/app/data1
+      - ./data2:/app/data2
