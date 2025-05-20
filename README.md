@@ -1,8 +1,3 @@
-Gönderdiğiniz `.txt` dosyası, bir **Python uygulamasının**, **Docker** ve **Azure Event Hubs** kullanarak ZIP içindeki CSV verilerini işleyip Fabric EventStream’e (Event Hubs) göndermesine olanak tanıyan bir çözümü açıklıyor. Ayrıca, bu çözümün yapılandırılması için gerekli olan `docker-compose.yml`, `Dockerfile`, `requirements.txt`, ortam değişkenleri ve çalıştırmaya dair örnekler yer alıyor.
-
-Aşağıda bu bilgileri temel alan **README.md** dosyasını markdown formatında bulabilirsiniz. Bu README dosyası hem teknik detayları içerir hem de kullanım kılavuzu niteliğindedir:
-
----
 
 # 🚀 Fabric EventStream'e ZIP İçindeki CSV Verilerini Gönderme Çözümü
 
