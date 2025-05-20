@@ -1,7 +1,14 @@
-
 # 🚀 Fabric EventStream'e ZIP İçindeki CSV Verilerini Gönderme Çözümü
 
 Bu proje, Azure Fabric EventStream (Event Hubs) üzerinde ZIP dosyalarından çıkarılan CSV verilerini etkili bir şekilde göndermek için hazırlanmış bir çözümdür. Özellikle büyük miktarda veriyi işlemeniz gerektiğinde yüksek performanslı toplu ve paralel işlemeye olanak tanır.
+
+GitHub üzerinden erişilebilir: [https://github.com/secedit/fabric-eventhub-streamer](https://github.com/secedit/fabric-eventhub-streamer)  
+Klonlamak için:
+```bash
+git clone git@github.com:secedit/fabric-eventhub-streamer.git
+```
+
+---
 
 ## ✅ Özellikler
 
@@ -12,6 +19,7 @@ Bu proje, Azure Fabric EventStream (Event Hubs) üzerinde ZIP dosyalarından ç�
 - 📁 Farklı klasörlerden gelen ZIP dosyalarını aynı anda işler (paralel işleme).
 - 📄 Her satıra meta veri eklenir: hangi ZIP ve CSV dosyasından geldiğini belirtir.
 - 🐳 Kolay dağıtım için Docker desteği.
+- 📝 Python bağımlılıkları `requirements.txt` ile yönetilir.
 
 ---
 
@@ -48,14 +56,22 @@ Proje aşağıdaki ana dosyalardan oluşur:
 
 ## 📦 Kullanım Talimatları
 
-### 1. Dosyaları Projeye Ekleyin
-Aşağıdaki dosyaları projenizin kök dizinine ekleyin:
-- `streamer.py`
-- `Dockerfile`
-- `requirements.txt`
-- `docker-compose.yml` (tercih edilen yöntem)
+### 1. Projeyi GitHub'dan İndirin
 
-### 2. Ortam Değişkenlerini Ayarlayın
+Git kullanarak projeyi klonlayın:
+```bash
+git clone git@github.com:secedit/fabric-eventhub-streamer.git
+cd fabric-eventhub-streamer
+```
+
+### 2. Python Bağımlılıklarını Yükleyin (Opsiyonel - Geliştirme için)
+
+Geliştirme yapacaksanız veya doğrudan çalıştıracaksanız:
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Ortam Değişkenlerini Ayarlayın
 
 #### Örnek `.env` dosyası:
 ```env
@@ -69,7 +85,7 @@ RETRY_DELAY=5
 MAX_CONCURRENT_FILES=10
 ```
 
-### 3. Docker ile Çalıştırma
+### 4. Docker ile Çalıştırma
 
 #### Docker Build ve Run Komutları:
 ```bash
@@ -83,7 +99,7 @@ docker run -it --rm \
   fabric-eventhub-streamer
 ```
 
-### 4. Docker Compose ile Çalıştırma (Önerilir)
+### 5. Docker Compose ile Çalıştırma (Önerilir)
 
 #### Örnek `docker-compose.yml`:
 ```yaml
@@ -132,16 +148,10 @@ Veriler artık tek tek değil, 1000'er satırlık gruplar halinde gönderilir. B
 
 ## 📝 Lisans & Katkı
 
-Bu proje açık kaynak olup, katkılar herkes için açıktır. Lisans bilgisi gerekiyorsa MIT veya Apache lisansları gibi yaygın lisanslardan birini ekleyebilirsiniz.
+Bu proje açık kaynak olup, katkılar herkes için açıktır. Gerektiğinde MIT veya Apache lisanslarından birini ekleyebilirsiniz.
 
 ---
 
 ## 📬 Destek veya Sorular?
 
 Herhangi bir sorunuz varsa, özelleştirme ihtiyacınız varsa lütfen bana yazmaktan çekinmeyin!
-
---- 
-
-> 💡 Not: Markdown formatındaki bu README dosyasını GitHub, GitLab veya VSCode gibi platformlarda düzgün görüntülemek için `.md` uzantılı bir dosya olarak kaydetmeniz gerekmektedir. Örneğin: `README.md`.
-
-Hazır haliyle kopyalayıp projenize ekleyebileceğiniz bu README dosyası, takım arkadaşlarınız ya da kullanıcılar için açıklayıcı ve kolay anlaşılır bir rehber sunar.
